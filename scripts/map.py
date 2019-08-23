@@ -1,5 +1,4 @@
-from urllib.request import urlopen
-from urllib.parse import urljoin
+from common import make_url
 from string import ascii_lowercase
 
 def caesar_cipher(text, shift):
@@ -14,6 +13,4 @@ def make_translation_table(shift):
 text = "g fmnc wms bgblr rpylqjyrc gr zw fylb. rfyrq ufyr amknsrcpq ypc dmp. bmgle gr gl zw fylb gq glcddgagclr ylb rfyr'q ufw rfgq rcvr gq qm jmle. sqgle qrpgle.kyicrpylq() gq pcamkkclbcb. lmu ynnjw ml rfc spj."
 print(caesar_cipher(text, 2))
 
-base_url = 'http://www.pythonchallenge.com/pc/def/'
-relative_url = caesar_cipher('map', 2) + '.html'
-print('Next url: ' + urljoin(base_url, relative_url))
+print('Next url: ' + make_url(caesar_cipher('map', 2)))

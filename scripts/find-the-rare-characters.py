@@ -1,4 +1,4 @@
-from urllib.parse import urljoin
+from common import make_url
 
 def read_file(filename):
     file = open(filename ,"r")
@@ -12,6 +12,4 @@ def remove_common_characters(text):
     return text
 
 text = read_file("find-the-rare-characters.txt")
-base_url = 'http://www.pythonchallenge.com/pc/def/'
-relative_url = remove_common_characters(text) + '.html'
-print('Next url: ' + urljoin(base_url, relative_url))
+print('Next url: ' + make_url(remove_common_characters(text)))
